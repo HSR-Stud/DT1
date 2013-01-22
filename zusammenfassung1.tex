@@ -1,0 +1,63 @@
+%Schriftgrösse, Layout, Papierformat, Gleichungen Linksbündig
+\documentclass[10pt,twoside,a4paper,fleqn]{article}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel,varioref}
+%Packages - Von LinAlg Formelsammlung kopiert! Überprüfen ob die alle notwendig sind
+\usepackage{amsmath,amssymb,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,paralist}
+\usepackage{listings}
+%Package für Bilder im Fliesstext
+\usepackage{multicol}
+
+%Package für Tabelle im Querformat
+\usepackage{rotating}
+
+\raggedright
+%Titel, Autor
+\newcommand{\titleinfo}{Digitaltechnik DT1 - Zusammenfassung}
+\newcommand{\authorinfo}{G. Koeppel, D. Koeppel, L. Leuenberger}
+\newcommand{\versioninfo}{v2.0 / Januar 2013}
+
+%pdf info
+\hypersetup{pdfauthor={\authorinfo},pdftitle={\titleinfo},colorlinks=false}
+%linkbordercolor=white
+\author{\authorinfo}
+\title{\titleinfo}
+
+%Kopf- und Fusszeile
+\pagestyle{fancy}
+\fancyhf{}
+%Linien oben und unten
+\renewcommand{\headrulewidth}{0.5pt} 
+\renewcommand{\footrulewidth}{0.5pt}
+
+\fancyhead[L]{\titleinfo{ }\tiny{(\versioninfo)}}
+%Kopfzeile rechts bzw. aussen
+\fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
+%Fusszeile links bzw. innen
+\fancyfoot[L]{\footnotesize{\authorinfo}}
+%Fusszeile rechts bzw. ausen
+\fancyfoot[R]{\footnotesize{\today}}
+
+%Document Anfang
+\begin{document}
+
+\input{sections/digital_vs_analog}
+\input{sections/zahlendarstellungen_und_codes}
+%\input{sections/schaltalgebra}
+%\input{sections/vhdl}		
+%\input{sections/realisierungs_methoden}
+%\input{sections/logische_gatter}
+
+\end{document}
+
+%\section{FETs}
+%	\begin{tabular}{|l|c|p{2cm}|p{2.5cm}|}
+%		\hline
+%		 & & FET leitend & FET sperrend\\
+%		\hline
+%		p-FET & \includegraphics[width=0.05\textwidth]{pics/pFET} & G: Low \newline D: High & G: High \newline D: Udef \\
+%		\hline
+%		n-FET & \includegraphics[width=0.05\textwidth]{pics/nFET} & G: High \newline D: Low & G: Low \newline D: Udef \\
+%		\hline
+%	\end{tabular}

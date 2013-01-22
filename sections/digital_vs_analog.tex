@@ -1,0 +1,47 @@
+\section{Digital vs. Analog}
+
+\subsection{Analog}
+	\begin{compactitem}
+		\item Die reale Welt ist analog (z.B. Sinnesorgane)
+		\item Die Analoge Verarbeitung stellt das Ergebnis einer Berechnung praktisch sofort zur Verfügung.
+		\item Analoge Systeme sind anfällig auf externe Störsignale.
+		\item Analoge Systeme sind extrem aufwändig und erfordern viel Fachwissen.	
+	\end{compactitem}
+	
+\subsection{Unterschied Analog zu Digital}
+	\includegraphics[width=0.3\textwidth]{pics/unterschied_analog_digital.jpg}
+	
+\subsection{Digital}
+	\begin{compactitem}
+		\item Einfacher automatisierbarer Entwurf und Test mit Hilfe von CAD möglich.
+		\item Digitale Schaltungen werden als integrierte Schaltungen mit Transistoren hergestellt uns sind somit reproduzierbar.
+		\item Digitale Systeme sind bis zu einem gewissen Grad weitgehend immun gegen Störsignale.
+	\end{compactitem}
+	
+	\subsubsection{Integration}
+		\begin{minipage}[c]{8 cm}
+			\includegraphics[width=0.9\textwidth]{pics/analog_digital_integration.jpg}
+		\end{minipage}
+		\begin{minipage}[c]{10 cm}
+			Trend zu höherer Integration. Digitaler Anteil wächst und die Analoge \glqq Schale\grqq\ bleibt bestehen.
+		\end{minipage}
+		
+\subsection{Von Analog zu Digital}
+	\begin{minipage}[c]{5 cm}
+		\includegraphics[width=0.9\textwidth]{pics/von_analog_zu_digital.jpg}
+	\end{minipage}
+	\begin{minipage}[c]{13 cm}
+		\begin{minipage}[c]{4 cm}
+			Abtasttheorem:
+			\newline\newline\newline
+			Amplitudenauflösung:
+			\newline\newline\newline\newline\newline
+			Quantisierungsfehler:
+			\newline
+		\end{minipage}
+		\begin{minipage}[c]{9 cm}
+			Nyquist-Shannon besagt, dass ein Signal mit $f_{max}$ mit mindestens einer Frequenz von $2*f_{max}$ abgetastet werden muss um das Ursprungssignal wieder herzustellen.\\
+			Die Anzahl abzählbarer Amplitudenwerte (Quantisierungsstufen) bestimmt die Auflösung eines AD-Wandlers. Diese wird in der Regel in Bits angegeben. Je kleiner der Bereich aufgeteilt ist, desto kleiner ist der Abstand $\Delta$ zwischen zwei benachbarten Amplitudenwerten.\\
+			Bei linearer Quantisierung ist der der Quantisierungsfehler (Quantisierungsrauschen) maximal $\frac{\Delta}{2}$
+		\end{minipage}
+	\end{minipage}
