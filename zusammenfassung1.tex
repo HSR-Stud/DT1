@@ -4,7 +4,7 @@
 \usepackage[latin1]{inputenc}
 \usepackage[ngerman]{babel,varioref}
 %Packages - Von LinAlg Formelsammlung kopiert! Überprüfen ob die alle notwendig sind
-\usepackage{amsmath,amssymb,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,paralist}
+\usepackage{array,amsmath,amssymb,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,paralist}
 \usepackage{listings}
 %Package für Bilder im Fliesstext
 \usepackage{multicol}
@@ -44,20 +44,9 @@
 
 \input{sections/digital_vs_analog}
 \input{sections/zahlendarstellungen_und_codes}
-%\input{sections/schaltalgebra}
-%\input{sections/vhdl}		
-%\input{sections/realisierungs_methoden}
-%\input{sections/logische_gatter}
+\input{sections/schaltalgebra}
+\input{sections/logische_gatter}
+\input{sections/sequentielle_systeme}
 
 \end{document}
 
-%\section{FETs}
-%	\begin{tabular}{|l|c|p{2cm}|p{2.5cm}|}
-%		\hline
-%		 & & FET leitend & FET sperrend\\
-%		\hline
-%		p-FET & \includegraphics[width=0.05\textwidth]{pics/pFET} & G: Low \newline D: High & G: High \newline D: Udef \\
-%		\hline
-%		n-FET & \includegraphics[width=0.05\textwidth]{pics/nFET} & G: High \newline D: Low & G: Low \newline D: Udef \\
-%		\hline
-%	\end{tabular}

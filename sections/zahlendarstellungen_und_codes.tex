@@ -38,6 +38,7 @@
 			\end{minipage}
 			\begin{minipage}[c]{2.4 cm}
 				Bsp: $4156.78=$\\
+				\newline
 			\end{minipage}
 			\begin{minipage}[c]{6.6 cm}
 				$4*10^3+1*10^2+5*10^1+6*10^0$\\
@@ -165,5 +166,94 @@
 		\hline
 	\end{tabular}
 	
+\subsection{Addition}
+	\begin{multicols}{3}
+		\subsubsection{Ganzzahlen}
+			\includegraphics[width=0.3\textwidth]{pics/addition1.jpg}
+		\columnbreak
+		
+		\subsubsection{Festkommazahlen}
+			\includegraphics[width=0.3\textwidth]{pics/addition2.jpg}
+		\columnbreak
+		
+		\subsubsection{Vorzeichen-Darstellung}
+			\begin{minipage}[c]{1.5 cm}
+				Es gilt: 
+				\newline
+			\end{minipage}
+			\begin{minipage}[c]{3.5 cm}
+				\begin{compactitem}
+					\item 0$\rightarrow$positiv
+					\item 1$\rightarrow$negativ
+				\end{compactitem}
+			\end{minipage}
+			Beispiel:\\
+			\begin{tabular}{llll}
+				$+$ & 12310 & = & 0 111 1011\\
+				$-$ & 12310 & = & 1 111 1011\\
+			\end{tabular}
+	\end{multicols}
+
+\begin{multicols}{2}
+	\subsection{Einerkomplement}
+		Das Einerkomplement wird durch Invertieren aller Bits der positiven Zahl gebildet.\\
+		$A_{k1}=\overline{A}$\\
+		\includegraphics[width=0.4\textwidth]{pics/einerkomplement.jpg}	
+		\columnbreak
+		
+	\subsection{Zweierkomplement}
+		Das Zweierkomplement wird durch Invertieren aller Bits der positiven Zahl und der Addition von 1 gebildet.\\
+		$A_{k2}=\overline{A}+1=(2^n-A)$\\
+		\includegraphics[width=0.4\textwidth]{pics/zweierkomplement.jpg}
+\end{multicols}
+
+\subsection{Subtraktion}
+	Für die Subtraktion A$-$B=C sind folgende Schritte notwendig:
+	\begin{compactitem}
+		\item 1) Der Subtrahend B muss ins Zweierkomplement gebracht werden.
+		\item 2) Die arithmetische Operation muss durchgeführt werden.
+		\item 3) Das Resultat muss korrekt interpretiert werden.
+	\end{compactitem}
+	In der Praxis bedeutet die Subtraktion von $2^n$, dass das Bit, welches an höchster Stelle ($n+1$) steht, ignoriert wird.
+
+\subsection{Bereichsüberschreitung}
+	In Hardware sind die Wortbreiten immer begrenzt, so kann es passieren, dass diese Wortbreite bei einer arithmetischen Operation überschritten wird.\\
+	Mit diesem Verfahren kann geprüft werden, ob eine Ergebnis korrekt ist:\\
+	\ \newline
+	\begin{tabular}{|l|l|l|}
+		\hline
+			Operation & Richtiges Ergebnis & Überlauf \\
+		\hline
+		\hline
+			A$+$B & c$_n=0$, c$_{n-1}=0$ & c$_n=0$, c$_{n-1}=1$ \\
+			A$-$B & c$_n=$c$_{n-1}$ & Nicht möglich \\
+			$-$A$-$B & c$_n=1$, c$_{n-1}=1$ & c$_n=1$, c$_{n-1}=0$ \\
+		\hline		
+	\end{tabular}
 	
-	
+\subsection{Codes}
+	\begin{minipage}[c]{5 cm}
+		\includegraphics[width=0.9\textwidth]{pics/codes.jpg}
+	\end{minipage}
+	\begin{minipage}[c]{13 cm}
+		Folgende Codes sind die am häufigst gebrauchten:
+		\begin{compactitem}
+			\item Binärcode
+			\item 
+				\begin{tabbing}
+					xxxxxxxxxxxxxxx\=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\kill	
+					Reiner Dualcode: \> Zuordnung von Dezimalzahlen zu den Bitfolgen des Dualsystems
+				\end{tabbing}
+			\item 
+				\begin{tabbing}
+					xxxxxxxxxxxxxxx\=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\kill
+					BCD Code: \> 
+								\begin{tabular}{|lllllll|}
+									\hline
+										Dezimal & 1 & 2 & 3 & $\dots$ & 9 & \textgreater 9 \\
+										BCD & 0001 & 0010 & 0011 & $\dots$ & 1001 & ungültig\\
+									\hline
+								\end{tabular}
+				\end{tabbing}
+		\end{compactitem}
+	\end{minipage}
