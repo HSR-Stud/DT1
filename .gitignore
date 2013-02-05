@@ -1,0 +1,7 @@
+DT1.pdf
+*.dvi
+*.aux
+*.log
+*.tcp
+*.synctex*
+*.out
