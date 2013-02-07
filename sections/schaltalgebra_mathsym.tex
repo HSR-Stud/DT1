@@ -1,39 +1,35 @@
 \section{Schaltalgebra}
 \subsection{Rechenregeln}
 
-\textbf{Allg. $\Rightarrow$ Punkt vor Strich oder $\land$ vor $\lor$}
+\textbf{Allg. $\Rightarrow$ Punkt vor Strich oder $\cdot$ vor $+$}
 
 	\begin{tabular}{llll}
-		Verkn"upfung mit 0 & $ a \lor 0 = a $ & $ a \land 0 = 0 $ & $ a \not= 0 = a $\\
-		Verkn"upfung mit 1 & $ a \lor 1 = 1 $ & $ a \land 1 = a $ & $ a \not= 1 = \overline{a} $ \\
-		Verkn. mit sich selbst & $ a \lor a = a $ & $ a \land a = a $ & $ a \not= a = 0 $ \\
-		Verkn. mit Inversem & $ a \lor \overline{a} = 1 $ & $ a \land \overline{a} = 0 $ & $ a \not= \overline{a} = 1 $ \\
+		Verkn"upfung mit 0 & $ a + 0 = a $ & $ a \cdot 0 = 0 $ & $ a \oplus 0 = a $\\
+		Verkn"upfung mit 1 & $ a + 1 = 1 $ & $ a \cdot 1 = a $ & $ a \oplus 1 = \overline{a} $ \\
+		Verkn. mit sich selbst & $ a + a = a $ & $ a \cdot a = a $ & $ a \oplus a = 0 $ \\
+		Verkn. mit Inversem & $ a + \overline{a} = 1 $ & $ a \cdot \overline{a} = 0 $ & $ a \oplus \overline{a} = 1 $ \\
 		\\
-		Kommutativgesetz & $ a \lor b = b \lor a $ & $ a \land b = b \land a $ & $ a \not= b = b \not= a $\\
-		Assioziativgesetz & $ (a \lor b) \lor c = a \lor (b \lor c) $ & $ (a \land b) \land c = a \land (b \land c) $ & $ (a \not= b) \not= c = a \not= (b \not= c) $ \\
-		Distributivgesetz & $ a \land (b \lor c) = (a \land b) \lor (a \land c) $ & $ a \lor (b \land c) = (a \lor b) \land (a \lor c) $ & $ a \land (b \not= c) = (a \land b) \not= (a \land c) $ \\	
+		Kommutativgesetz & $ a + b = b + a $ & $ a \cdot b = b \cdot a $ & $ a \oplus b = b \oplus a $\\
+		Assioziativgesetz & $ (a + b) + c = a + (b + c) $ & $ (a \cdot b) \cdot c = a \cdot (b \cdot c) $ & $ (a \oplus b) \oplus c = a \oplus (b \oplus c) $ \\
+		Distributivgesetz & $ a \cdot (b + c) = (a \cdot b) + (a \cdot c) $ & $ a + (b \cdot c) = (a + b) \cdot (a + c) $ & $ a \cdot (b \oplus c) = (a \cdot b) \oplus (a \cdot c) $ \\	
 		\end{tabular}
 \subsection{Vereinfachungen}
-\begin{tabular}{llll}
-	$ a \lor (a \land b) = a $ &
-	$ a \land (a \lor b) = a $ &
-	$ (a \lor \overline{b}) \land b = a \land b $ &
-	$ (a \land b) \lor (a \land \overline{b}) = a $\\
-	$ (a \land\overline{b}) \lor b = a \lor b $ &
-	$ (a \land \overline{b}) \not= b = a \lor b $ &
-	$ (a \not= \overline{b}) \land b = a \land b $ &
-	$ (a \lor b) \land (a \lor \overline{b}) = a $\\
+\begin{tabular}{lllll}
+	$ a + (a \cdot b) = a $ & $(a \cdot b) + (a \cdot \overline{b}) = a $ &\hspace{2.0cm} &
+	$  (a \cdot\overline{b}) + b = a + b$ & $ (a \cdot \overline{b}) \oplus b = a + b $\\
+	$  a \cdot (a + b) = a $ & $ (a + b) \cdot (a + \overline{b}) = a $ &\hspace{2.0cm}&
+	$ (a + \overline{b}) \cdot b = a \cdot b $ &$(a \oplus \overline{b}) \cdot b = a \cdot b  $\\
 \end{tabular}
 
 \subsection{Shannon und DeMorgan}
 \begin{multicols}{2}
 	\textbf{DeMorgan}\\
-	$a \land b = \overline{(\overline{a} \lor \overline{b})}$\\
-	$a \lor b = \overline{(\overline{a} \land \overline{b})}$
+	$a \cdot b = \overline{\overline{(a \cdot b)}}= \overline{(\overline{a} + \overline{b})}$\\
+	$a + b =  \overline{\overline{(a + b)}}= \overline{(\overline{a} \cdot \overline{b})}$
 
 	\textbf{Shanon} (Vereinfachter Demorgan)\\
 	- alle Variablen negieren\\
-	- alle Operatoren negieren ($\lor \rightarrow \land / \land \rightarrow \lor$)\\
+	- alle Operatoren negieren ($+ \rightarrow \cdot / \cdot \rightarrow +$)\\
 	- ganzer Ausdruck negieren
 \end{multicols}
 \begin{tabular}{lll}
@@ -50,24 +46,24 @@
 \vspace{-5pt}
 \textbf{Minterm}$~~$ \\
 Zeile in WHT mit Funktionswert = \textbf{1}\\
-$\rightarrow$ Eingangsvariablen AND($\land$)-Verknüpfen \\
+$\rightarrow$ Eingangsvariablen AND($\cdot$)-Verknüpfen \\
 $\rightarrow $ Eingangsvariable mit Wert \textbf{0} invertieren\\
 \textbf{DNF (Sums of products)}\\
-Minterme OR($\lor$)-Verknüpfen\\
+Minterme OR($+$)-Verknüpfen\\
 \textbf{Kurzschreibweise:}\\
-DNF: $ b = \lor([1],[3],5) $ \\
+DNF: $ b = \#([1],[3],5) $ \\
 Zahl entspricht Zeile, Eckige Klammern bedeutet don't care.\\ 
 
 \subsubsection{KKNF (Kanonisch Konjunktive Normalform)}
 \vspace{-5pt}
 \textbf{Maxterm}$~~$ \\
 Zeile in WHT mit Funktionswert = \textbf{0}\\
-$\rightarrow$ Eingangsvariablen OR($\lor$)-Verknüpfen \\
+$\rightarrow$ Eingangsvariablen OR($+$)-Verknüpfen \\
 $\rightarrow $ Eingangsvariable mit Wert \textbf{1} invertieren\\
 \textbf{KNF (Products of sums)}\\
-Maxterme AND($\land$)-Verknüpfen\\
+Maxterme AND($\cdot$)-Verknüpfen\\
 \textbf{Kurzschreibweise:}\\
-KNF: $ a = \land([1],[2],3) $ \\
+KNF: $ a = \&([1],[2],3) $ \\
 Zahl entspricht Zeile, Eckige Klammern bedeutet don't care.\\ 
 
 \includegraphics[width=0.5\textwidth]{pics/KNFDNF}

@@ -14,22 +14,18 @@
 		Distributivgesetz & $ a \land (b \lor c) = (a \land b) \lor (a \land c) $ & $ a \lor (b \land c) = (a \lor b) \land (a \lor c) $ & $ a \land (b \not= c) = (a \land b) \not= (a \land c) $ \\	
 		\end{tabular}
 \subsection{Vereinfachungen}
-\begin{tabular}{llll}
-	$ a \lor (a \land b) = a $ &
-	$ a \land (a \lor b) = a $ &
-	$ (a \lor \overline{b}) \land b = a \land b $ &
-	$ (a \land b) \lor (a \land \overline{b}) = a $\\
-	$ (a \land\overline{b}) \lor b = a \lor b $ &
-	$ (a \land \overline{b}) \not= b = a \lor b $ &
-	$ (a \not= \overline{b}) \land b = a \land b $ &
-	$ (a \lor b) \land (a \lor \overline{b}) = a $\\
+\begin{tabular}{lllll}
+	$ a \lor (a \land b) = a $ & $(a \land b) \lor (a \land \overline{b}) = a $ &\hspace{2.0cm} &
+	$  (a \land\overline{b}) \lor b = a \lor b$ & $ (a \land \overline{b}) \not= b = a \lor b $\\
+	$  a \land (a \lor b) = a $ & $ (a \lor b) \land (a \lor \overline{b}) = a $ &\hspace{2.0cm}&
+	$ (a \lor \overline{b}) \land b = a \land b $ &$(a \not= \overline{b}) \land b = a \land b  $\\
 \end{tabular}
 
 \subsection{Shannon und DeMorgan}
 \begin{multicols}{2}
 	\textbf{DeMorgan}\\
-	$a \land b = \overline{(\overline{a} \lor \overline{b})}$\\
-	$a \lor b = \overline{(\overline{a} \land \overline{b})}$
+	$a \land b = \overline{\overline{(a \land b)}}= \overline{(\overline{a} \lor \overline{b})}$\\
+	$a \lor b = \overline{\overline{(a \lor b)}} = \overline{(\overline{a} \land \overline{b})}$
 
 	\textbf{Shanon} (Vereinfachter Demorgan)\\
 	- alle Variablen negieren\\

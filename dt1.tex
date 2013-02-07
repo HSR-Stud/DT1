@@ -1,0 +1,40 @@
+%Schriftgr"osse, Layout, Papierformat, Gleichungen Linksb"undig
+\documentclass[10pt,twoside,a4paper,fleqn]{article}
+\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel,varioref}%ngerman
+%Packages - Von LinAlg Formelsammlung kopiert! "Uberpr"ufen ob die alle notwendig sind
+\usepackage{amsmath,amssymb,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim}
+\usepackage{listings}
+%Package f"ur Bilder im Fliesstext
+\usepackage{multicol}
+
+%Package f"ur Tabelle im Querformat
+\usepackage{rotating}
+
+%Paragraphe ebenfalls nummerieren
+\setcounter{secnumdepth}{4}
+
+\raggedright
+%Titel, Autor
+\title{Digitaltechnik Zusammenfassung}
+\author{Giachen Koeeppel, Damian Koeppel}
+
+%Seitenstyle
+\pagestyle{fancy}
+\lfoot{{Giachen und Giari K\"oppel, C. Gwerder, S.K\"orner}}
+
+
+
+%Document Anfang
+\begin{document}
+
+\input{sections/digital_vs_analog}
+%\input{sections/schaltalgebra_logiksym} % Schaltalgebra mit Logik Symbolen (V,...)
+\input{sections/schaltalgebra_mathsym} %Schaltalgebra mit Mathematischen Symbolen (+,...)
+%\input{sections/vhdl}		
+%\input{sections/realisierungs_methoden}
+\input{sections/logische_gatter}
+\input{sections/sequentielle_systeme}
+
+\end{document}

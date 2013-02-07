@@ -1,47 +1,60 @@
+\begin{multicols}{2}
 \section{Digital vs. Analog}
+Digital ist st"orsicher, hat keine St"orfortpflanzung und erlaubt einfachen Entwurf und Test mit Hilfe von CAD.
 
-\subsection{Analog}
-	\begin{compactitem}
-		\item Die reale Welt ist analog (z.B. Sinnesorgane)
-		\item Die Analoge Verarbeitung stellt das Ergebnis einer Berechnung praktisch sofort zur Verfügung.
-		\item Analoge Systeme sind anfällig auf externe Störsignale.
-		\item Analoge Systeme sind extrem aufwändig und erfordern viel Fachwissen.	
-	\end{compactitem}
-	
-\subsection{Unterschied Analog zu Digital}
-	\includegraphics[width=0.3\textwidth]{pics/unterschied_analog_digital.jpg}
-	
-\subsection{Digital}
-	\begin{compactitem}
-		\item Einfacher automatisierbarer Entwurf und Test mit Hilfe von CAD möglich.
-		\item Digitale Schaltungen werden als integrierte Schaltungen mit Transistoren hergestellt uns sind somit reproduzierbar.
-		\item Digitale Systeme sind bis zu einem gewissen Grad weitgehend immun gegen Störsignale.
-	\end{compactitem}
-	
-	\subsubsection{Integration}
-		\begin{minipage}[c]{8 cm}
-			\includegraphics[width=0.9\textwidth]{pics/analog_digital_integration.jpg}
-		\end{minipage}
-		\begin{minipage}[c]{10 cm}
-			Trend zu höherer Integration. Digitaler Anteil wächst und die Analoge \glqq Schale\grqq\ bleibt bestehen.
-		\end{minipage}
+Analog ist st"oranf"allig, komplex, erfordert Spezialisten, Entwurf weitgehend von Hand, etc.
+
+Digital ist aber langsamer, da alles in der Welt analog ist. F"ur Digital brauchts also noch eine Umwandlung.
+\subsection{AD-Wandlung}
+$$ \text{Abstastfrequenz} \geq 2\cdot f_{max}$$\\
+$$ \Delta \text{Quantisierungsstufe} = 2 \cdot \text{Quantisierungsfehler}$$\\
+$$\text{AmplitudenauflÃ¶sung: Dynamik; SNR} \approx 6dB/bit$$
+\end{multicols}
+
+\begin{multicols}{2}
+\section{Digital}
+\subsection{FETs (selbstsperrend)}
+	\begin{tabular}{|l|c|p{2.2cm}|p{2cm}|}
+		\hline
+		 & & $U_{GS}$ (leitend) & $I_D$ bei $U_{DS}$\\
+		\hline
+		n-FET & \raisebox{-.8\totalheight}{\includegraphics[width=0.05\textwidth]{pics/nFET}} & positiv & positiv \\
+		\hline
+		p-FET & \raisebox{-.8\totalheight} {\includegraphics[width=0.05\textwidth]{pics/pFET}} & negativ & negativ \\
+		\hline
+	\end{tabular}
+$$\hspace{-1.5cm}\text{GatterÃ¤quivalent } n_{ge} = \frac{n_{trans}}{4}$$\\
+
+\subsection{Zahlensysteme}
+\subsubsection{BinÃ¤r}
+\paragraph{BereichsÃ¼berschreitung Zweierkomplement}
+\begin{itemize}
+	\item [] Richtig $\Rightarrow Carry_n = Carry_{n-1}$\\
+		  Falsch $\Rightarrow Carry_n \neq Carry_{n-1}$\\
+\end{itemize}
+
+\paragraph{Umwandeln von Komastellen}
+\begin{itemize}
+	\item [] $Komastelle_0 \cdot Basis = Ganzzahl_1,Komastelle_1$\\
+		     $\dots$WeiterfÃ¼hren bis Genauigkeit erreicht ist\\		     
+                     $Komastelle_{n-1} \cdot Basis = Ganzzahl_{n}, Komastelle_{n}$\\
+			
+	\item [] Wert hinter Koma in neuem Zahlensystem $= Ganzzahl_{1}\cdot Basis^{-1} + \dots+ Ganzzahl_n\cdot Basis^{-n}$\\
+		Somit werden Stellen hinter Komma von oben nach unten aufgeschrieben
+
+	\item [] \textbf{Beispiel} mit Zahl 2.7$_{10}$\\
+		$\left.\begin{array}{ccc}
+			2 / 2 & = 1 & R 0\\
+			1 / 2 & = 0 & R 1
+		\end{array}\right\uparrow$\\
+		$\left.\begin{array}{cccl}
+			0.7 \cdot 2 &= &\mathbf{1}.4\\
+			0.4 \cdot 2 &= &\mathbf{0}.8\\
+			0.8 \cdot 2 &= & \mathbf{1}.6\\
+			0.6 \cdot 2 &= & \mathbf{1}.2\\
+		\end{array}\right\downarrow$\\
 		
-\subsection{Von Analog zu Digital}
-	\begin{minipage}[c]{5 cm}
-		\includegraphics[width=0.9\textwidth]{pics/von_analog_zu_digital.jpg}
-	\end{minipage}
-	\begin{minipage}[c]{13 cm}
-		\begin{minipage}[c]{4 cm}
-			Abtasttheorem:
-			\newline\newline\newline
-			Amplitudenauflösung:
-			\newline\newline\newline\newline\newline
-			Quantisierungsfehler:
-			\newline
-		\end{minipage}
-		\begin{minipage}[c]{9 cm}
-			Nyquist-Shannon besagt, dass ein Signal mit $f_{max}$ mit mindestens einer Frequenz von $2*f_{max}$ abgetastet werden muss um das Ursprungssignal wieder herzustellen.\\
-			Die Anzahl abzählbarer Amplitudenwerte (Quantisierungsstufen) bestimmt die Auflösung eines AD-Wandlers. Diese wird in der Regel in Bits angegeben. Je kleiner der Bereich aufgeteilt ist, desto kleiner ist der Abstand $\Delta$ zwischen zwei benachbarten Amplitudenwerten.\\
-			Bei linearer Quantisierung ist der der Quantisierungsfehler (Quantisierungsrauschen) maximal $\frac{\Delta}{2}$
-		\end{minipage}
-	\end{minipage}
+		Zahl = 10,\textbf{1011}$\dots_2$ \\
+	\end{itemize}
+\end{multicols}
+\vspace{-20pt}
