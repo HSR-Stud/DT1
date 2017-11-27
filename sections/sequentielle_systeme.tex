@@ -151,17 +151,17 @@
 			Die prim"aren Ausg"ange entsprechen dem Zustandsvektor
 	\end{multicols}
 	
-\subsection{Zustandscodierung}
+\subsection{Zustandscodierung (ZC)}
 	\begin{multicols}{3}
 		\begin{compactitem}
 			\item Bin"ar: Alle Zust"ande werden der Reihe nach durchnummeriert.
-			\newline
-			\newline
+			$k = \lbrack \frac{log_{10}(p)}{log_{10}(2)} \rbrack = log_2(p), \; p < 2^k $
+			Anz. m"ogl. ZC: $q = (2^k!)(2^k - p)!$
 			\item ONE-HOT: Nur eine Speicherstelle im Code hat jeweils den Wert 1. Alle anderen besitzen den Wert 0 (z.B. 001, 010, 100)
 			\item ONE-COLD: Nur eine Speicherstelle im Code hat jeweils den Wert 0. Alle anderen besitzen den Wert 1 (z.B. 110, 101, 011)
 		\end{compactitem}
 	\end{multicols}
-	
+\newpage
 \subsection{Synthese von Zustandsmaschinen}
 	\begin{multicols}{2}
 		\begin{enumerate}
