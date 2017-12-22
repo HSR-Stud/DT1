@@ -8,7 +8,7 @@ deploy:
   provider: releases
   api_key: $GITHUB_RELEASE_TOKEN
   file:
-   - ./DigT1.pdf
+   - ./DT1.pdf
   skip_cleanup: true
   on:
     tags: true
