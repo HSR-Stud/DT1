@@ -1,0 +1,45 @@
+%Darstellung Dokument =========================================================================================
+\documentclass[10pt,twoside,a4paper,fleqn]{article}
+\usepackage[left=0.5cm,right=0.5cm,top=0.5cm,bottom=0.25cm,includeheadfoot]{geometry}
+
+
+%wichtige Standard-Packages ===================================================================================
+\usepackage[latin1]{inputenc}
+\usepackage[ngerman]{babel,varioref}
+%Packages - Von LinAlg Formelsammlung kopiert! Überprüfen ob die alle notwendig sind
+\usepackage{array,amsmath,amssymb,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,paralist}
+\usepackage{listings}
+%Package für Bilder im Fliesstext
+\usepackage{multicol}
+
+%Package für Tabelle im Querformat
+\usepackage{rotating}
+
+
+% Zusätzliche Einstellungen =============================================================================
+\raggedright			% \raggedright removes paragraph indentation
+
+
+%PDF Infos =============================================================================================
+\hypersetup{pdfauthor={\authorinfo},pdftitle={\titleinfo},colorlinks=false}
+%linkbordercolor=white
+\author{\authorinfo}
+\title{\titleinfo}
+
+% Layout =================================================================================================
+%Kopf- und Fusszeile
+\pagestyle{fancy}
+\fancyhf{}
+
+%Linien oben und unten
+\renewcommand{\headrulewidth}{0.25pt} 
+\renewcommand{\footrulewidth}{0.25pt}
+
+%Kopfzeile
+\fancyhead[L]{\titleinfo{ }\tiny{\textit{(\versioninfo)}}}
+\fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
+
+%Fusszeile
+\fancyfoot[L]{\footnotesize{\authorinfo}}
+\fancyfoot[C]{\footnotesize{\licence \quad $\rightarrow$ \href{https://github.com/HSR-Stud}{Github: HSR-Stud}}}
+\fancyfoot[R]{\footnotesize{\today}}

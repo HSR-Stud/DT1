@@ -1,31 +1,47 @@
 \section{Sequentielle Systeme}
 
-\subsection{Taktsignal}
-	\begin{minipage}{8 cm}
-		Weil sequentielle Schaltungen in der Regel synchron arbeiten, muss eine Referenz zur Einhaltung der Synchronit"at definiert werden. Das Taktsignal ist ein bin"ares Signal, das in regelm"assiger Abfolge zwischen zwei Zust"anden hin und her pendelt.
-	\end{minipage}
-	\begin{minipage}{0.5 cm}
-		\ 
-	\end{minipage}
-	\begin{minipage}{7 cm}
-		\includegraphics[width=0.9\textwidth]{pics/taktsignal}
-	\end{minipage}
-	\begin{minipage}{2 cm}
-		$f=\frac{1}{T}$ [Hz]
-	\end{minipage}
+ \begin{multicols}{2}
+	\subsection{Taktsignal}
+			\includegraphics[width=0.6\columnwidth]{pics/taktsignal}
+			\newline
+			$\mathbf{f=\frac{1}{T}}$ [Hz]
+			\columnbreak
+		\subsection{l"angster Pfad}
+			\includegraphics[width=0.5\columnwidth]{pics/laengster_pfad.jpg}
+			\columnbreak
+	\end{multicols}
 
 \subsection{Flipflops und Latches}
 	\subsubsection{Unterschied Flipflop und Latch}
-		\begin{minipage}{12 cm}
-			Taktzustandsgesteuerte Systeme haben den Nachteil, dass in ihrer transparenten Phase auch asynchrone Schaltvorg"ange stattfinden k"onnen. Echt synchrone Systeme "andern ihren Zustand nur bei der aktiven Flanke des Taktsignals. Genau in diesem Moment und sonst nie wird das Eingangssignal bei einem Speicherelement in den Speicher "ubertragen. Nur beim taktflankengesteuerten System wechseln die Ausg"ange immer genau zum Zeitpunkt der aktiven Taktflanke. Beim taktzustandsgesteuerten System sind w"ahrend der transparenten Phase auch Zustands"anderungen zwischen zwei Taktflanken m"oglich. \\
-			Taktflankengesteuerte Speicherelemente werden Flip-Flops genannt. Taktzustandsgesteuerte Speicherelemente werden Latches genannt
-		\end{minipage}
-		\begin{minipage}{0.5 cm}
-			\ 
-		\end{minipage}
-		\begin{minipage}{6 cm}
-			\includegraphics[width=0.9\textwidth]{pics/flipflop_latch}
-		\end{minipage}
+%		\begin{minipage}{12 cm}
+%			Taktzustandsgesteuerte Systeme haben den Nachteil, dass in ihrer transparenten Phase auch asynchrone Schaltvorg"ange stattfinden k"onnen. Echt synchrone Systeme "andern ihren Zustand nur bei der aktiven Flanke des Taktsignals. Genau in diesem Moment und sonst nie wird das Eingangssignal bei einem Speicherelement in den Speicher "ubertragen. Nur beim taktflankengesteuerten System wechseln die Ausg"ange immer genau zum Zeitpunkt der aktiven Taktflanke. Beim taktzustandsgesteuerten System sind w"ahrend der transparenten Phase auch Zustands"anderungen zwischen zwei Taktflanken m"oglich. \\
+%			Taktflankengesteuerte Speicherelemente werden Flip-Flops genannt. Taktzustandsgesteuerte Speicherelemente werden Latches genannt
+%		\end{minipage}
+%		\begin{minipage}{0.5 cm}
+%			\ 
+%		\end{minipage}
+%		\begin{minipage}{6 cm}
+%			\includegraphics[width=0.9\textwidth]{pics/flipflop_latch}
+%		\end{minipage}
+		\begin{multicols}{3}
+			\textbf{D-FF}\\
+			\includegraphics[width=0.2\columnwidth]{pics/d_flipflopO.png}
+			\includegraphics[width=0.78\columnwidth]{pics/d_flipflop.png}\\
+			%Wechselt Zustand, nur bei (positiver Flanke des Taktsignals)
+			\columnbreak
+			
+			\textbf{D-Latch}\\
+			\includegraphics[width=0.2\columnwidth]{pics/d_latchO.png}
+			\includegraphics[width=0.78\columnwidth]{pics/d_latch.png}\\
+			Wechselt Zustand, wann immer Level der Eingangssignale wechseln
+			\columnbreak
+			
+			\textbf{Unterschied}\\
+			\includegraphics[width=0.8\columnwidth]{pics/flipflop_latch}
+			\columnbreak
+			
+		\end{multicols}
+			
 		
 	\subsubsection{Transmission Gate}
 		\begin{minipage}{10 cm}
@@ -94,6 +110,7 @@
 		\begin{minipage}{8 cm}
 			\includegraphics[width=0.9\textwidth]{pics/setupholdtime}
 		\end{minipage}
+	\newpage
 		
 \subsection{Beschreibung sequentieller Systeme}
 	\begin{multicols}{2}
@@ -140,38 +157,42 @@
 	\begin{multicols}{3}
 		\subsubsection{Mealy-System}
 			\includegraphics[width=0.26\textwidth]{pics/seq_mealy}
-			Ausg"ange h"angen vom momentanen Zustand und den aktuellen Eing"angen ab
+			Ausg"ange h"angen vom momentanen Zustand und den aktuellen Eing"angen ab.
+			\columnbreak
 			
 		\subsubsection{Moore-System}
 			\includegraphics[width=0.26\textwidth]{pics/seq_moore}
-			Ausg"ange h"angen nur vom momentanen Zustand ab und "andern mit der Clock Flanke
+			Ausg"ange h"angen nur vom momentanen Zustand ab und "andern mit der Clock Flanke.
+			\columnbreak
 			
 		\subsubsection{Medwedjew-System}
 			\includegraphics[width=0.3\textwidth]{pics/seq_medmedjew}
-			Die prim"aren Ausg"ange entsprechen dem Zustandsvektor
+			Die prim"aren Ausg"ange entsprechen dem Zustandsvektor.
+			\columnbreak
 	\end{multicols}
 	
 \subsection{Zustandscodierung (ZC)}
+	k: Anzahl Speicherstellen (1 Bit ist eine Speicherstelle), p: Anzahl Zust"ande
 	\begin{multicols}{3}
 		\begin{compactitem}
-			\item Bin"ar: Alle Zust"ande werden der Reihe nach durchnummeriert.
-			$k = \lbrack \frac{log_{10}(p)}{log_{10}(2)} \rbrack = log_2(p), \; p < 2^k $
-			Anz. m"ogl. ZC: $q = (2^k!)(2^k - p)!$
+			\item Bin"ar: Alle Zust"ande werden der Reihe nach durchnummeriert. \\
+			$k = \lceil \frac{log_{10}(p)}{log_{10}(2)} \rceil = \lceil log_2(p)\rceil, \; p < 2^k $
+			Anz. m"ogl. ZC: $q = (2^k!)/(2^k - p)!$
 			\item ONE-HOT: Nur eine Speicherstelle im Code hat jeweils den Wert 1. Alle anderen besitzen den Wert 0 (z.B. 001, 010, 100)
 			\item ONE-COLD: Nur eine Speicherstelle im Code hat jeweils den Wert 0. Alle anderen besitzen den Wert 1 (z.B. 110, 101, 011)
 		\end{compactitem}
 	\end{multicols}
-\newpage
-\subsection{Synthese von Zustandsmaschinen}
-	\begin{multicols}{2}
-		\begin{enumerate}
-			\setlength{\itemsep}{1pt}
-			\setlength{\parskip}{0pt}
-			\setlength{\parsep}{0pt}
-			\item Zustandsdiagramm aufstellen
-			\item Zustandskodierung zuweisen
-			\item Zustandstabelle nach festen Regeln aufstellen
-			\item Speicheransteuer-Funktionen bestimmen
-			\item Ausgangs-Funktionen bestimmen
-		\end{enumerate}
-	\end{multicols}
+
+%\subsection{Synthese von Zustandsmaschinen}
+%	\begin{multicols}{2}
+%		\begin{enumerate}
+%			\setlength{\itemsep}{1pt}
+%			\setlength{\parskip}{0pt}
+%			\setlength{\parsep}{0pt}
+%			\item Zustandsdiagramm aufstellen
+%			\item Zustandskodierung zuweisen
+%			\item Zustandstabelle nach festen Regeln aufstellen
+%			\item Speicheransteuer-Funktionen bestimmen
+%			\item Ausgangs-Funktionen bestimmen
+%		\end{enumerate}
+%	\end{multicols}

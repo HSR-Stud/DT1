@@ -1,7 +1,9 @@
 \section{Logische Gatter}
 
-\textbf{Realisierungsaufwand:} Anzahl Transistoren ist ein m"ogliches Mass f"ur die Komplexit"at (Marketing). In der Technik spricht man von Gatter"aquivalent: 1 Gatter"aquivalent entspricht 4 Transistoren. \\ 
-\textbf{Anzahl Schaltfunktionen:} $F= {2^2}^n$, n: Anzahl Eing"ange
+\textbf{Realisierungsaufwand:} Anzahl Transistoren ist ein m"ogliches Mass f"ur die Komplexit"at (Marketing). In der Technik spricht man von Gatter"aquivalent: 1 Gatter"aquivalent entspricht 4 Transistoren = NOR oder NAND Gatter\\
+$n_{G}=n_{Trans}/4$; \ \ $n_{G}$: Anzahl Gatter, $n_{Trans}$: Anzahl Transistoren
+ 
+\textbf{Anzahl Schaltfunktionen:} $F= {2^2}^n$; n: Anzahl Eing"ange
 
 \subsection{Verhalten logischer Gatter}
 	\begin{minipage}[c]{8 cm}
@@ -10,7 +12,8 @@
 			Low-Pegel: $ U_{nL} = U_{eLmax} - U_{aLmax} $\\	
 			\newline
 			\newline
-			\newline			
+			Ausgang: Restriktiv, nahe am Idealwert\\
+			Eingang: tolerant, grosser Bereich			
 	\end{minipage}	
 	\begin{minipage}[c]{6 cm}
 		\includegraphics[width=0.9\textwidth]{pics/Pegelbereiche_Stoerabstand}
@@ -35,12 +38,12 @@
 	\begin{minipage}[c]{9 cm}
 		\subsubsection{Statischer Hazard}
 			\includegraphics[width=1\textwidth]{pics/hazardstatisch}
-			Der Funktionswert eines kombinatorischen Systems "andert kurzzeitig seinen Pegel, wenn eine Eingangsvariable den Pegel "andert, obschon von der logischen Funktion keine "Anderung gegeben ist.
+			Der Funktionswert eines kombinatorischen Systems \textbf{"andert kurzzeitig seinen Pegel}, wenn eine Eingangsvariable den Pegel "andert, obschon von der logischen Funktion keine "Anderung gegeben ist.
 	\end{minipage}
 	\begin{minipage}[c]{9 cm}	
 		\subsubsection{Dynamischer Hazard}
 			\includegraphics[width=1\textwidth]{pics/hazarddynamisch}
-			Der Funktionswert eines kombinatorischen Systems "andert mehrmals kurzzeitig seinen Pegel, wenn eine Eingangsvariable den Pegel "andert, obschon von der logischen Funktion her nur eine einzige "Anderung erfolgen sollte.
+			Der Funktionswert eines kombinatorischen Systems \textbf{"andert \underline{mehrmals} kurzzeitig seinen Pegel}, wenn eine Eingangsvariable den Pegel "andert, obschon von der logischen Funktion her nur eine einzige "Anderung erfolgen sollte.
 	\end{minipage}
 	
 \begin{sidewaystable}
@@ -50,7 +53,7 @@
 				Funktion & Buffer & NOT & AND & NAND & OR & NOR & EXOR & XNOR\\
 				& & Nicht & Und & Nicht Und & Oder & Nicht Oder & Exklusiv Oder & Nicht Ex. Oder\\
 				& & Inverter & Konjunktion & & Disjunktion & & Antivalenz & "Aquivalenz \\
-			\hline
+			\hline \vspace{0.1cm}
 				Formel & a & $ \overline a $ & $ a * b $ & $ \overline{a * b} $ & $ a + b $ & $ \overline{a + b} $ & $ a \oplus b $ & $ \overline{a \oplus b} $\\
 				& a & $ \overline a $ & $ a \wedge b $ & $ \overline{a \wedge b} $ & $ a \vee b $ & $ \overline{a \vee b} $ & $ a \$ b $ & $ \overline{a \$ b} $ \\
 			\hline

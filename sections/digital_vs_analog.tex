@@ -1,41 +1,4 @@
-\section{Digital vs. Analog}
-
-\subsection{Analog}
-	\begin{compactitem}
-		\item Die reale Welt ist analog (z.B. Sinnesorgane)
-		\item Die analoge Verarbeitung stellt das Ergebnis einer Berechnung praktisch sofort zur Verfügung.
-		\item Analoge Systeme sind anfällig auf externe Störsignale.
-		\item Analoge Systeme sind extrem aufwändig und erfordern viel Fachwissen.	
-	\end{compactitem}
-	
-\subsection{Digital}
-	\begin{compactitem}
-		\item Einfacher automatisierbarer Entwurf und Test mit Hilfe von CAD möglich.
-		\item Digitale Schaltungen werden als integrierte Schaltungen mit Transistoren hergestellt uns sind somit reproduzierbar.
-		\item Digitale Systeme sind bis zu einem gewissen Grad weitgehend immun gegen Störsignale.
-	\end{compactitem}
-	
-\subsection{Unterschied Analog zu Digital}
-\begin{multicols}{3}
-	\includegraphics[width=5cm]{pics/unterschied_analog_digital.jpg}
-		\columnbreak
-	\includegraphics[width=5cm]{pics/analog_digital_integration.jpg}
-		\columnbreak
-		\\
-	Trend zu höherer Integration: Der digitale Anteil wächst, wobei der analoge Teil weiterhin die Verbindung nach Aussen darstellt \lbrack wie eine Schale\rbrack.
-\end{multicols}
-
-%	\includegraphics[width=0.3\textwidth]{pics/unterschied_analog_digital.jpg}
-%	
-%	\subsubsection{Integration}
-%		\begin{minipage}[c]{8 cm}
-%			\includegraphics[width=0.9\textwidth]{pics/analog_digital_integration.jpg}
-%		\end{minipage}
-%		\begin{minipage}[c]{10 cm}
-%			Trend zu höherer Integration: Der digitale Anteil wächst, wobei der analoge Teil weiterhin die Verbindung nach Aussen darstellt \lbrack wie eine Schale\rbrack.
-%		\end{minipage}
-%		
-\subsection{Von Analog zu Digital}
+\section{Von Analog zu Digital}
 	\begin{minipage}[c]{5 cm}
 		\includegraphics[width=0.9\textwidth]{pics/von_analog_zu_digital.jpg}
 	\end{minipage}
@@ -46,12 +9,61 @@
 			Amplitudenauflösung:
 			\newline\newline\newline\newline\newline\newline
 			Quantisierungsfehler:
-			\newline
+			\newline\newline
+			dynamischer Bereich AD-Wandler:
 		\end{minipage}
 		\begin{minipage}[c]{9 cm}
 			Nyquist-Shannon besagt, dass ein Signal mit $f_{max}$ mit mindestens einer Frequenz von $2*f_{max}$ abgetastet werden muss, um das Ursprungssignal wieder herzustellen.\\
 			Die Anzahl abzählbarer Amplitudenwerte (Quantisierungsstufen) bestimmt die Auflösung eines AD-Wandlers. Diese wird in der Regel in Bits angegeben. Je kleiner der Bereich aufgeteilt ist, desto kleiner ist der Abstand $\Delta A$ zwischen zwei benachbarten Amplitudenwerten.\\
 			Anz. Quantisierungsstufen: $n_{q} = \frac{V_{max} - V{min}}{\Delta A} =$ n \\
-			Bei linearer Quantisierung ist der Quantisierungsfehler (Quantisierungsrauschen) max. $\frac{\Delta A}{2}$	
+			Bei linearer Quantisierung ist der Quantisierungsfehler (Quantisierungsrauschen) max. $\frac{\Delta A}{2}$\\
+			\newline
+			$DR_{ADC} = U_{max} / U_{min}$\\
+			Faustformel: $DR_{ADC}[dB] = 6 * \# Bit$\\
 		\end{minipage}
 	\end{minipage}
+
+\section{Bin"are Multiplikation}
+	\begin{multicols}{2}
+		\includegraphics[width=0.7\columnwidth]{pics/multiplikation}
+		\columnbreak
+		
+		Multiplikation von zwei n-Bit Wörtern\\
+		Grösstes zu erwartendes Ergebnis:\\
+		\ \newline
+		$E=(2^n-1)*(2^n-1)=2^{2n}-2^{n+1}+1\leq2^{2n}-1$\\
+		\ \newline\newline
+		Ergebnis kann also max. 2n Bits lang sein!
+	\end{multicols}
+
+\section{CMOS Beschaltung}
+	\subsection{Beispiel: Inverter}
+		\begin{multicols}{2}
+			\includegraphics[width=0.5\textwidth]{pics/cmos_transistorenL.png}
+			\columnbreak
+			
+			\includegraphics[width=0.5\textwidth]{pics/cmos_transistorenR.png}\newline
+			PMOS leitet bei Low-Pegel\\
+			NMOS leitet bei High-Pegel\\
+			\columnbreak
+		\end{multicols}
+	
+\section{RAM}
+	\begin{multicols}{2}
+		\subsection{SRAM}
+		\includegraphics[width=0.5\columnwidth]{pics/sram.png}\newline\newline
+		Vorteil: Zustand bleibt, solange Strom vorhanden
+			
+		\subsection{DRAM}
+		\includegraphics[width=0.3\columnwidth]{pics/dram.png}\newline
+		Vorteil: Grosse Dichte einzelner Zellen\\
+		Nachteile: \\-Leckstrom Kapazit"at\\
+				   -Refresh\\
+				   -Steuerlogik\\
+
+		
+	\end{multicols}
+			
+
+		
+	

@@ -62,13 +62,13 @@
 
 \subsection{Shannon und DeMorgan}
 	\begin{tabular}{lll}
-		Ursprungsschaltung: & Shannon & DeMorgan\\
+		Ursprungsschaltung: & DeMorgan & Shannon\\
 		\includegraphics[width=0.3\textwidth]{pics/shanonursprung} & 
 		\includegraphics[width=0.3\textwidth]{pics/demorganende} &
 		\includegraphics[width=0.3\textwidth]{pics/shanonende}\\
-		Shannon & DeMorgan & \\
-		$\neg f(a, b, c, ...z; \wedge, \vee) = f(\neg a, \neg v, \neg c, ... \neg z; \wedge, \vee)$ & $\neg(a \vee b) = \neg a \wedge \neg b$ & 
-		  $\neg(a \wedge b) = \neg a \vee \neg b $ \\ 
+	 & DeMorgan	 &  Shannon \\
+	 & $\neg(a \vee b) = \neg a \wedge \neg b$	&  $\neg f(a, b, c, ...z; \wedge, \vee) = f(\neg a, \neg v, \neg c, ... \neg z; \wedge, \vee)$ 
+%		  $\neg(a \wedge b) = \neg a \vee \neg b $ \\ 
 	\end{tabular}
 % Die Negation einer beliebigen log. Funktion f erh"alt man, wenn man alle Variablen durch ihre Negation ersetzt und die Operatoren vertauscht. \\
 
@@ -77,7 +77,7 @@
 		Ausgangslage:\\
 		\begin{tabular}{|l|l|l|l|l||l||l|}
 			\hline	
-				Dezimal & $x_2$ & $x_1$ & $x_0$ & y & KDNF & KKNF\\	
+				Dezimal & $x_2$ & $x_1$ & $x_0$ & y & DNF & KNF\\	
 			\hline
 			\hline
 				0 & 0 & 0 & 0 & 0 & & $x_2 \vee x_1 \vee x_0$ \\
@@ -96,14 +96,20 @@
 			\hline
 				7 & 1 & 1 & 1 & 1 & $x_2 \wedge x_1 \wedge x_0$ &\\
 			\hline
-		\end{tabular}
-\end{minipage}
+		\end{tabular}\\
+	\newline
+	
+	\lbrack Don't care \rbrack = \lbrack d \rbrack
+	
+	\end{minipage}
 \begin{minipage}{8cm}
-Kanonisch disjunktive Normalform \lbrack KDNF\rbrack: Es werden nur diejenigen Zeilen der Wahrheitstabelle aufgef"uhrt, deren Funktionswert 1 oder d ist. \\
+\subsubsection{DNF} 
+Kanonisch disjunktive Normalform (KDNF): Es werden nur diejenigen Zeilen der Wahrheitstabelle aufgef"uhrt, deren Funktionswert \textbf{1} oder \textbf{d} ist. \\
 $y=(\overline{x_2} \wedge \overline{x_1} \wedge x_0) \vee (\overline{x_2} \wedge x_1 \wedge x_0) \vee [x_2 \wedge \overline{x_1} \wedge x_0] \vee (x_2 \wedge x_1 \wedge \overline{x_0}) \vee (x_2 \wedge x_1 \wedge x_0)$ \\
-\\
-Kanonisch konjunktive Normalform \lbrack KKNF\rbrack: 
-Es werden nur diejenigen Zeilen der Wahrheitstabelle aufgef"uhrt, deren Funktionswert 0 oder d ist. \\
+
+\subsubsection{KNF}
+Kanonisch konjunktive Normalform (KKNF): 
+Es werden nur diejenigen Zeilen der Wahrheitstabelle aufgef"uhrt, deren Funktionswert \textbf{0} oder \textbf{d} ist. \\
 $y=(x_2 \vee x_1 \vee x_0) \wedge (x_2 \vee \overline{x_1} \vee x_0) \wedge (\overline{x_2} \vee x_1 \vee x_0) \wedge [\overline{x_2} \vee x_1 \vee \overline{x_0}]$ \\
 \end{minipage}
 \subsection{Karnaugh-Diagramm}
@@ -111,16 +117,16 @@ $y=(x_2 \vee x_1 \vee x_0) \wedge (x_2 \vee \overline{x_1} \vee x_0) \wedge (\ov
 \begin{compactitem}
 	\item 1) \ \ Aufstellen der Wahrheitstabelle.\\
 	\item 2) \ \ "Ubertragen der Werte der Wahrheitstabelle ins KV Diagramm.\\
-	\item 3) \ \ M"oglichst grosse Gruppen a $2^n$ Felder bilden (k"onnen auch "uber die Ecken gehen).\\
+	\item 3) \ \ M"oglichst grosse Gruppen a $2^n$ Felder bilden (2, 4, 8 ...) (k"onnen auch "uber die Ecken gehen).\\
 	\item 4)
 	\begin{tabular}{ll}
-		Kanonisch disjunktive Normalform: & Kanonisch konjunktive Normalform: \\
-		Gruppen von Feldern mit Wert 1 oder d & Gruppen von Feldern mit Wert 0 oder d\\
+		DNF: & KNF: \\
+		Gruppen von Feldern mit Wert \textbf{1} oder \textbf{d} & Gruppen von Feldern mit Wert \textbf{0} oder \textbf{d}\\
 		Primimplikanten: AND Verkn"upfung & Primimplikanten: OR Verkn"upfung\\
 		OR Verkn"upfung aller Primimplikanten & AND Verkn"upfung aller Primimplikanten\\
 	\end{tabular}
 \end{compactitem}
-\newpage
+
 \subsection{Karnaugh-Diagramm}
 	\begin{multicols}{3}
 		\includegraphics[width=0.3\textwidth]{pics/kv/2erKV} 

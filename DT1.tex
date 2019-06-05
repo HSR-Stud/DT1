@@ -1,52 +1,36 @@
-%Schriftgrösse, Layout, Papierformat, Gleichungen Linksbündig
-\documentclass[10pt,twoside,a4paper,fleqn]{article}
-\usepackage[left=1cm,right=1cm,top=1cm,bottom=1cm,includeheadfoot]{geometry}
-\usepackage[latin1]{inputenc}
-\usepackage[ngerman]{babel,varioref}
-%Packages - Von LinAlg Formelsammlung kopiert! Überprüfen ob die alle notwendig sind
-\usepackage{array,amsmath,amssymb,fancybox,graphicx,color,lastpage,wrapfig,fancyhdr,hyperref,verbatim,paralist}
-\usepackage{listings}
-%Package für Bilder im Fliesstext
-\usepackage{multicol}
 
-%Package für Tabelle im Querformat
-\usepackage{rotating}
+%Dokumentinformationen	======================================================================
+\newcommand{\titleinfo}{Digitaltechnik DT1 - Formelsammlung}
+\newcommand{\authorinfo}{Studenten der HSR}
+\newcommand{\versioninfo}{HS \ 2019}
+\newcommand{\licence}{CC BY-NC-SA}
 
-\raggedright
-%Titel, Autor
-\newcommand{\titleinfo}{Digitaltechnik DT1 - Zusammenfassung}
-\newcommand{\authorinfo}{G. Koeppel, D. Koeppel, L. Leuenberger}
-\newcommand{\versioninfo}{v2.0 / Januar 2013}
 
-%pdf info
-\hypersetup{pdfauthor={\authorinfo},pdftitle={\titleinfo},colorlinks=false}
-%linkbordercolor=white
-\author{\authorinfo}
-\title{\titleinfo}
+%weitere Autoren: ==========================================================================
+% Dev4Future, G. Koeppel, D. Koeppel, L. Leuenberger
 
-%Kopf- und Fusszeile
-\pagestyle{fancy}
-\fancyhf{}
-%Linien oben und unten
-\renewcommand{\headrulewidth}{0.5pt} 
-\renewcommand{\footrulewidth}{0.5pt}
 
-\fancyhead[L]{\titleinfo{ }\tiny{(\versioninfo)}}
-%Kopfzeile rechts bzw. aussen
-\fancyhead[R]{Seite \thepage { }von \pageref{LastPage}}
-%Fusszeile links bzw. innen
-\fancyfoot[L]{\footnotesize{\authorinfo}}
-%Fusszeile rechts bzw. ausen
-\fancyfoot[R]{\footnotesize{\today}}
+%eigene Befehle: ==========================================================================
+%weitere neue oder umdefinierte Befehle 
+\newcommand{\fb}{\color{red}\textit}	%Verweis auf Seite im Formelbuch
 
-%Document Anfang
+
+
+% Dokumenteinstellungen	 ======================================================================
+\include{header/header}			% standard header mit den Packages includieren
+
+
+
+% Sections ======================================================================
+%einbinden der verschieden Sections/ Seiten/ Themen
 \begin{document}
-
-\input{sections/digital_vs_analog}
-\input{sections/zahlendarstellungen_und_codes}
-\input{sections/schaltalgebra}
-\input{sections/logische_gatter}
-\input{sections/sequentielle_systeme}
-
+	\input{sections/zahlendarstellungen_und_codes}
+	\input{sections/rechenarten}
+	\input{sections/schaltalgebra}
+	\input{sections/logische_gatter}
+	\input{sections/sequentielle_systeme}
+	\input{sections/digital_vs_analog}
+	%\newpage
+	%\input{sections/allgm_Wissen} 	%include -> neue Seite; für Formelsammlung Prüfung auskommentieren
 \end{document}
 
