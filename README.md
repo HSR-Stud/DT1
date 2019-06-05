@@ -1,8 +1,5 @@
- DT1 (neu DigTech)
-===
+# DT1 (neu DigTech)
+Formelsammlung für Digitaltechnik
 
-Summary for Skript 2.0
-
-Updated: November 2017
-
-License: CC by-sa 3.0
+### Licence 
+CC BY-NC-SA 3.0 
