@@ -1,3 +1,4 @@
+
 [submodule "Travis"]
 	path = Travis
-	url = git@github.com:HSR-Stud/Travis.git
+	url = https://github.com/HSR-Stud/Travis
